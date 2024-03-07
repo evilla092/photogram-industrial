@@ -1,1 +1,14 @@
-<h1>hello</h1>
+<div class="row">
+  <div class="col-md-6 offset-3">
+    <h1>
+      <%= @user.username %>
+    </h1>
+    <h2>Liked photos</h2>
+
+    <%= render "shared/tabs" %>
+  </div>
+</div>
+
+<%= @user.liked_photos.each do |photo| %>
+  <%= render "photos/photo", photo: photo %>
+<% end %>

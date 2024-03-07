@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-6 offset-3">
+    <h1>
+      <%= @user.username %>
+    </h1>
+    <h2>Followers</h2>
+
+    <%= render "shared/tabs" %>
+  </div>
+</div>
+<ul>
+<%  @user.followers.each do |follower| %>
+  <li> 
+  <%= link_to "#{follower.username}", user_path(follower.username) %>
+  </li>
+<% end %>
+</ul>
