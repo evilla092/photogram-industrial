@@ -3,14 +3,13 @@
     <h1>
       <%= @user.username %>
     </h1>
-    <h2>Own photos</h2>
+    <h2>Feed</h2>
 
-<%= render "shared/tabs" %>
+    <%= render "shared/tabs" %>
   </div>
 </div>
-
 <ul>
-  <% @user.own_photos.each do |photo|%>
+  <% @user.feed.each do |photo|%>
     <li>
       <%= render "photos/photo", photo: photo %>
     </li>
