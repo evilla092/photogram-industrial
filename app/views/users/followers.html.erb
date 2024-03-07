@@ -8,10 +8,10 @@
     <%= render "shared/tabs" %>
   </div>
 </div>
-<ul>
+<ul class="list-group col-md-6 offset-3">
 <%  @user.followers.each do |follower| %>
-  <li> 
-  <%= link_to "#{follower.username}", user_path(follower.username) %>
+  <li class="list-group-item"> 
+  <%= link_to follower.username, user_path(follower.username) %>
   </li>
 <% end %>
 </ul>

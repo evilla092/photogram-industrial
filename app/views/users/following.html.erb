@@ -8,12 +8,10 @@
     <%= render "shared/tabs" %>
   </div>
 </div>
-<ul>
-<%  @user.accepted_sent_follow_requests.each do |leader| %>
-  <% x = User.where(id: leader.recipient_id).first.username %>
-  <li> 
-  <%#= link_to "#{leader.username}", user_path(leader.username) %>
-  <%= link_to "#{x}", user_path(x) %>
+<ul class="list-group col-md-6 offset-3">
+<% @user.leaders.each do |leader|%>
+  <li class="list-group-item"> 
+  <%= link_to leader.username, user_path(leader.username) %>
   </li>
 <% end %>
 </ul>
